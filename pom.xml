@@ -40,9 +40,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.javaVersion>1.8</project.build.javaVersion>
 
         <!-- Plugin versions -->
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-notice-plugin.version>1.0.6.1</maven-notice-plugin.version>
+        <maven-source-plugin.version>3.0.0</maven-source-plugin.version>
 
         <!-- Dependency versions -->
         <coherence.version>[12.1.2,12.2.0)</coherence.version>
@@ -114,6 +117,29 @@
                         <phase>initialize</phase>
                         <goals>
                             <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
