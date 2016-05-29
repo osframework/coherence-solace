@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.osframework.cohsol</groupId>
+    <artifactId>coherence-solace</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>Coherence-Solace Bridge</name>
+    <description>Bi-directional adapter between Oracle Coherence and Solace messaging</description>
+    <url>https://github.com/osframework/coherence-solace</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <repositories>
+        <repository>
+            <id>maven.oracle.com</id>
+            <url>https://maven.oracle.com</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.oracle.com</id>
+            <url>https://maven.oracle.com</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugin versions -->
+        <maven-notice-plugin.version>1.0.6.1</maven-notice-plugin.version>
+
+        <!-- Dependency versions -->
+        <coherence.version>[12.1.2,12.2.0)</coherence.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <solace.version>7.1.2.248</solace.version>
+        <testng.version>6.9.10</testng.version>
+    </properties>
+
+    <dependencies>
+        <!-- Coherence -->
+        <dependency>
+            <groupId>com.oracle.coherence</groupId>
+            <artifactId>coherence</artifactId>
+            <version>${coherence.version}</version>
+        </dependency>
+
+        <!-- Solace -->
+        <dependency>
+            <groupId>com.solacesystems.common</groupId>
+            <artifactId>sol-common</artifactId>
+            <version>${solace.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.solacesystems.jcsmp</groupId>
+            <artifactId>sol-jcsmp</artifactId>
+            <version>${solace.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Required supporting dependencies -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jasig.maven</groupId>
+                <artifactId>maven-notice-plugin</artifactId>
+                <version>${maven-notice-plugin.version}</version>
+                <configuration>
+                    <noticeTemplate>misc/NOTICE.template</noticeTemplate>
+                    <licenseMapping>
+                        <param>misc/license-mappings.xml</param>
+                    </licenseMapping>
+                    <generateChildNotices>false</generateChildNotices>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>check-license</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,24 @@
+Copyright 2016 OSFramework Project
+
+Licensed under The Apache Software License, Version 2.0
+
+This project includes:
+
+  BeanShell under GNU LESSER GENERAL PUBLIC LICENSE
+  Coherence-Solace Bridge under The Apache Software License, Version 2.0
+  com.solacesystems.common:sol-common under Solace Systems Inc. License Agreement, http://dev.solacesystems.com/downloads/download_java-api/
+  com.solacesystems.jcsmp:sol-jcsmp under Solace Systems Inc. License Agreement, http://dev.solacesystems.com/downloads/download_java-api/
+  Commons Lang under The Apache Software License, Version 2.0
+  JCL 1.1.1 implemented over SLF4J under MIT License
+  JCommander under The Apache Software License, Version 2.0
+  Oracle Coherence under The "Oracle Technology Network License Agreement - Oracle
+            Maven Repository" is the license for this Project Object
+            Model (POM) file and the associated software and
+            documentation unless you have accepted or agreed to
+            different license terms with Oracle when you obtained the
+            right to use the POM file, software and documentation.
+            Please refer to the comments below for additional
+            information.
+  SLF4J API Module under MIT License
+  testng under Apache  Version 2.0, January 2004
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<license-lookup xmlns="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup https://source.jasig.org/schemas/maven-notice-plugin/license-lookup/license-lookup-v1.0.xsd">
+    <artifact>
+        <groupId>com.solacesystems.common</groupId>
+        <artifactId>sol-common</artifactId>
+        <version>7.1.2.248</version>
+        <license>Solace Systems Inc. License Agreement, http://dev.solacesystems.com/downloads/download_java-api/</license>
+    </artifact>
+    <artifact>
+        <groupId>com.solacesystems.jcsmp</groupId>
+        <artifactId>sol-jcsmp</artifactId>
+        <version>7.1.2.248</version>
+        <license>Solace Systems Inc. License Agreement, http://dev.solacesystems.com/downloads/download_java-api/</license>
+    </artifact>
+</license-lookup>
